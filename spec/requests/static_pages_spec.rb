@@ -11,13 +11,13 @@ describe "Static pages" do
 
 	it "should have the right links on the layout" do
 		visit root_path
-		click_link "About"
-		expect(page).to have_title(full_title('About Us'))
-		click_link "Help"
-		expect(page).to have_title(full_title('Help'))
-		click_link "Contact"
-		expect(page).to have_title(full_title('Contact'))
-		click_link "Home"
+		click_link "Om oss"
+		expect(page).to have_title(full_title('Om oss'))
+		click_link "Hjälp"
+		expect(page).to have_title(full_title('Hjälp'))
+		click_link "Kontakt"
+		expect(page).to have_title(full_title('Kontakt'))
+		click_link "Hem"
 		expect(page).to have_title(full_title(''))
 		click_link "Sign up"
 		expect(page).to have_title(full_title('Sign up'))
@@ -31,29 +31,29 @@ describe "Static pages" do
 		let(:page_title)	{ '' }
 
 		#it_should_behave_like "all static pages"
-		it { should_not have_title('| Home') }
+		it { should_not have_title('| Hem') }
 	end
 
 	describe "Help page" do
 		before { visit help_path }
-		let(:heading)		{ 'Help' }
-		let(:page_title)	{ 'Help' }
+		let(:heading)		{ 'Hjälp' }
+		let(:page_title)	{ 'Hjälp' }
 
 		it_should_behave_like "all static pages"
 	end
 
 	describe "About page" do
 		before { visit about_path }
-		let(:heading)		{ 'About' }
-		let(:page_title)	{ 'About Us' }
+		let(:heading)		{ 'Om oss' }
+		let(:page_title)	{ 'Om oss' }
 
 		it_should_behave_like "all static pages"
 	end
 
 	describe "Contact page" do
 		before { visit contact_path }
-		let(:heading)		{ 'Contact' }
-		let(:page_title)	{ 'Contact' }
+		let(:heading)		{ 'Kontakt' }
+		let(:page_title)	{ 'Kontakt' }
 
 		it_should_behave_like "all static pages"
 	end
