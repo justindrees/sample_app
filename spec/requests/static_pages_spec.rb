@@ -17,8 +17,6 @@ describe "Static pages" do
 		expect(page).to have_title(full_title('Hjälp'))
 		click_link "Kontakt"
 		expect(page).to have_title(full_title('Kontakt'))
-		click_link "Hem"
-		expect(page).to have_title(full_title(''))
 		click_link "Sign up"
 		expect(page).to have_title(full_title('Sign up'))
 		click_link "Oporto1"
@@ -54,6 +52,14 @@ describe "Static pages" do
 		before { visit contact_path }
 		let(:heading)		{ 'Kontakt' }
 		let(:page_title)	{ 'Kontakt' }
+
+		it_should_behave_like "all static pages"
+	end
+
+	describe "News page" do
+		before { visit contact_path }
+		let(:heading)		{ 'Nyheter' }
+		let(:page_title)	{ 'Nyheter' }
 
 		it_should_behave_like "all static pages"
 	end
