@@ -2,7 +2,7 @@ namespace :db do
 	desc "Fill database with sample data"
 	task populate: :environment do
 		admin = User.create!(name: "Example User",
-					email: "example@example.com",
+					email: "styrelsen@example.com",
 					password: "foobar",
 					password_confirmation: "foobar",
 					admin: true)
@@ -15,6 +15,13 @@ namespace :db do
 						 email: email,
 						 password: password,
 						 password_confirmation: password)
+		end
+
+		user = User.find_by(email: "styrelsen@example.com")
+		50.times do
+			title = "Test Title"
+			content = Faker::Lorem.sentence(5)
+			user.microposts.create!(title: title, content: content)
 		end
 	end
 end

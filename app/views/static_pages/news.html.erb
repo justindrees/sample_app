@@ -1,5 +1,13 @@
 <% provide(:title, "Nyheter") %>
 <h1>Nyheter</h1>
-<p>
-	This is the news!
-</p>
+<div class="row">
+	<div class="span10">
+		<%= will_paginate @microposts %>
+		<% if @user.microposts.any? %>
+			<div class="microposts">
+				<%= render @microposts %>
+			</div>
+		<%= will_paginate @microposts %>
+		<% end %>
+	</div>
+</div>
