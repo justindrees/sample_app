@@ -36,7 +36,7 @@ module SessionsHelper
     end
 
     def admin_user?
-      current_user.admin?
+      @user.admin == true
     end
 
 	def sign_out

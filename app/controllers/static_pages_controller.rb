@@ -14,6 +14,6 @@ class StaticPagesController < ApplicationController
   def news
     @user = User.find_by(email: "styrelsen@example.com")
     @microposts = @user.microposts.paginate(page: params[:page])
-    @micropost = current_user.microposts.build if admin_user?
+    @micropost = @user.microposts.build if admin_user?
   end
 end
