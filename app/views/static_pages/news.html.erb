@@ -2,7 +2,15 @@
 <h1>Nyheter</h1>
 <div class="row">
 	<div class="span10">
-		<%= will_paginate @microposts %>
+		<% if admin_user? %>
+			<div class="row">
+				<aside class="span10">
+					<section>
+						<%= render 'shared/micropost_form' %>
+					</section>
+				</aside>
+			</div>
+		<% end %>
 		<% if @user.microposts.any? %>
 			<div class="microposts">
 				<%= render @microposts %>
