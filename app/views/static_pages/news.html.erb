@@ -2,7 +2,7 @@
 <h1>Nyheter</h1>
 <div class="row">
 	<div class="span10">
-		<% if admin_user? %>
+		<% if signed_in? && admin_user? %>
 			<div class="row">
 				<aside class="span10">
 					<section>
